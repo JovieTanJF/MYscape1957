@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Cuisine</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="../assets/img/logo/icon.jpg" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Cardo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="cuisine.css" rel="stylesheet">
+  <link href="../index/loginCookies.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="../index/index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="../assets/img/logo/myscape.png" class="logo" alt="Logo">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="../index/index.html">Home<br></a></li>
+          <li class="dropdown"><a href="../index/index.html#choice" class="active"><span>Others </span><i class="bi bi-chevron-down toggle-dropdown"></a></i>
+            <ul>
+              <li><a href="../destination/destination.html">Destination</a></li>
+              <li><a href="../cuisine/cuisine.html">Cuisine</a></li>
+              <li><a href="../travel/travel.html">Adventure Travel</a></li>
+              <li><a href="../festival/festival.html">Festival</a></li>
+            </ul>
+          </li>
+          <li><a href="../aboutus/aboutus.html">About Us</a></li>
+          <li><a href="../feedback/feedback.html">Feedback</a></li>
+          <li><a href="#" id="loginBtn">Login</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="http://facebook.com" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="http://instagram.com" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="http://youtube.com" class="youtube"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="button-container">
+      <p>Music: 
+        <img src="../assets/img/mainpageImages/Music/play.png" onclick="playMusic()">
+        <img src="../assets/img/mainpageImages/Music/stop.png" onclick="stopMusic()">
+      </p>
+    </div>
+    <audio id="background-music" src="../assets/img/mainpageImages/Music/Saya Anak Malaysia.mp3" autoplay loop>
+      Your browser does not support the audio element.
+    </audio>
+
+    <section class="banner">
+      <div class="banner-content">
+          <span class="underlighth1"><h1>&ensp;Cuisine&ensp;</h1></span>
+      </div>
+    </section>
+
+    <section id="cuisine">
+      <div class="container">
+        <div class="image-container">
+          <h1 id="title">Penang</h1>
+          <div class="image-grid">
+            <div class="image-wrapper large">
+                <img id="image1" src="../assets/img/cuisineImages/Penang/Oyster Omelette.jpg" alt="Image 1">
+                <p id="desc1" style="font-size: 20px; font-weight: 600;"><strong>Oyster Omelette</strong></p>
+                <p id="desc01" style="color: rgb(188, 188, 188);">The freshness of the oysters used in this meal sets it apart from others. To give the oysters a crisp yet soft feel, fried rice flour batter and eggs are combined with them. You also receive chili, which is a bit sweeter than usual, with the omelette.</p>
+            </div>
+              <div class="image-wrapper small">
+                <img id="image2" src="../assets/img/cuisineImages/Penang/Cendol.jpg" alt="Image 2">
+                <p id="desc2" style="font-size: 20px; font-weight: 600;"><strong>Cendol</strong></p>
+                <p id="desc02" style="color: rgb(188, 188, 188);">This lovely bowl of shaved ice will make you smile. It is paired with red beans, fresh coconut milk, chewy green rice flour jelly (chendol), and gula Melaka (brown sugar) syrup. It may be found practically anywhere in Penang's streets.</p>
+              </div>
+              <div class="image-wrapper small">
+                <img id="image3" src="../assets/img/cuisineImages/Penang/Penang Laksa.jpg" alt="Image 3">
+                <p id="desc3" style="font-size: 20px; font-weight: 600;"><strong>Penang Laksa</strong></p>
+                <p id="desc03" style="color: rgb(188, 188, 188);">Authentic Penang dishes include this acidic hot soup with plump white noodles and sprinkling of tuna. It has a unique smell. It's worth a try even if you don't think it's worth it because of the sweet-sour taste.</p>
+              </div>
+          </div>
+          </div>
+        <div class="state-list">
+          <h3 id="title">List</h3>
+          <div class="state-buttons">
+              <button onclick="changeState('Penang')">Penang</button>
+              <button onclick="changeState('Perlis')">Perlis</button>
+              <button onclick="changeState('Kedah')">Kedah</button>
+              <button onclick="changeState('Perak')">Perak</button>
+              <button onclick="changeState('Selangor')">Selangor</button>
+              <button onclick="changeState('Malacca')">Malacca</button>
+              <button onclick="changeState('Johor')">Johor</button>
+              <button onclick="changeState('Kelantan')">Kelantan</button>
+              <button onclick="changeState('Pahang')">Pahang</button>
+              <button onclick="changeState('Sabah')">Sabah</button>
+              <button onclick="changeState('Sarawak')">Sarawak</button>
+              <button onclick="changeState('Terengganu')">Terengganu</button>
+              <button onclick="changeState('Labuan')">Labuan</button>
+              <button onclick="changeState('Putrajaya')">Putrajaya</button>
+              <button onclick="changeState('Negeri Sembilan')">Negeri Sembilan</button>
+              <button onclick="changeState('Kuala Lumpur')">Kuala Lumpur</button>
+          </div>
+        </div>   
+      </div>
+    </section>
+      
+    <section id="choice" class="choice section">
+      <div class="container-fluid choice py-5">
+        <div class="container py-5">
+          <div class="tab-class text-center">
+            <div class="row g-4">
+              <div class="col-lg-12 text-center">
+                <h1>Our Related Webpages</h1>
+              </div>
+            </div>
+            <div class="tab-content">
+              <div id="tab-1" class="tab-pane fade show p-0 active">
+                <div class="row g-4">
+                  <div class="col-lg-12">
+                    <div class="row g-4">
+                      <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="rounded position-relative choice-item">
+                          <div class="choice-img">
+                            <img src="../assets/img/mainpageImages/Others Cover/destination.png" class="img-fluid w-100 rounded-top" alt="">
+                          </div>
+                          <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                            <h4><strong>Destination</strong></h4>
+                            <p>Malaysia boasts dazzling cities, hidden beaches, ancient cultures, and breathtaking rainforests, all in one.
+                            </p>
+                            <div class="d-flex justify-content-between flex-lg-wrap">
+                              <a href="../destination/destination.html" class="btn border border-secondary rounded-pill px-3 text-primary">Click Here</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="rounded position-relative choice-item">
+                          <div class="choice-img">
+                            <img src="../assets/img/mainpageImages/Others Cover/cuisine.png" class="img-fluid w-100 rounded-top" alt="">
+                          </div>
+                          <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                            <h4><strong>Cuisine</strong></h4>
+                            <p>Malaysia's cuisine is a flavorful fusion of Malay, Chinese, and Indian culinary traditions.</p>
+                            <div class="d-flex justify-content-between flex-lg-wrap">
+                              <a href="../cuisine/cuisine.html" class="btn border border-secondary rounded-pill px-3 text-primary">Click Here</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="rounded position-relative choice-item">
+                          <div class="choice-img">
+                            <img src="../assets/img/mainpageImages/Others Cover/travel.jpg" class="img-fluid w-100 rounded-top" alt="">
+                          </div>
+                          <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                            <h4><strong>Travel</strong></h4>
+                            <p>Journey through Malaysia, where vibrant streets, serene beaches, diverse cultures, and unforgettable experiences await.</p>
+                            <div class="d-flex justify-content-between flex-lg-wrap">
+                              <a href="../travel/travel.html" class="btn border border-secondary rounded-pill px-3 text-primary">Click Here</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div><div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="rounded position-relative choice-item">
+                          <div class="choice-img">
+                            <img src="../assets/img/mainpageImages/Others Cover/festival.jpg" class="img-fluid w-100 rounded-top" alt="">
+                          </div>
+                          <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                            <h4><strong>Festival</strong></h4>
+                            <p>Malaysia's festivals celebrate unity, blending diverse traditions with vibrant colors and joyful celebrations.</p>
+                            <div class="d-flex justify-content-between flex-lg-wrap">
+                              <a href="../festival/festival.html" class="btn border border-secondary rounded-pill px-3 text-primary">Click Here</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>    
+                </div>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer sticky-bottom">
+    <div class="container">
+      <div class="about">
+        <h2>About Us</h2>
+        <p><strong>Email</strong>&emsp;MYscape@gmail.com</p>
+        <p><strong>Address</strong>&emsp;Jalan Universiti, 31900 Kampar, Perak</p>
+        <p><strong>Phone Number</strong>&emsp;05-468 8888</p>
+      </div>
+      <div class="social-links d-flex justify-content-left">
+        <a href="http://facebook.com"><i class="bi bi-facebook"></i></a>
+        <a href="http://instagram.com"><i class="bi bi-instagram"></i></a>
+        <a href="http://youtube.com"><i class="bi bi-youtube"></i></a>
+      </div>
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span><img src="../assets/img/logo/myscape.png" class="logo" alt="Logo"><span>All Rights Reserved</span></p>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Login Form -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <form>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <div class="input-icon">
+            <input type="email" id="email" class="form-control" placeholder="Enter Email">
+            <i class="bi bi-envelope" style="color: black;"></i>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <div class="input-icon">
+            <input type="password" id="password" class="form-control" placeholder="Enter Password">
+            <i id="togglePassword" class="bi bi-eye-slash" style="cursor: pointer; color:black"></i>
+          </div>
+        </div>
+        <div class="form-options">
+          <div>
+            <input type="checkbox" id="remember">
+            <label for="remember">Remember me</label>
+          </div>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+    </div>
+  </div>
+
+  <!-- Registration Form -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Registration</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <div class="input-icon">
+            <input type="text" id="username" class="form-control" placeholder="Enter Username">
+            <i class="bi bi-person" style="color: black;"></i>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <div class="input-icon">
+            <input type="email" id="regEmail" class="form-control" placeholder="Enter Email">
+            <i class="bi bi-envelope" style="color: black;"></i>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <div class="input-icon">
+            <input type="password" id="regPassword" class="form-control" placeholder="Enter Password">
+            <i id="toggleRegPassword" class="bi bi-eye-slash" style="cursor: pointer;color: black;"></i>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password:</label>
+          <div class="input-icon">
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password">
+            <i id="toggleConfirmPassword" class="bi bi-eye-slash" style="cursor: pointer;color: black;"></i>
+          </div>
+        </div>
+        <div class="form-options">
+          <div>
+            <input type="checkbox" id="terms">
+            <label for="terms">I agree to the terms & conditions</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Register</button>
+      </form>
+      <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+    </div>
+  </div>
+
+  <!-- Login Success Modal -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login Successfully</h2>
+      <p>Welcome to MYSCAPE!</p>
+    </div>
+  </div>
+
+  <!-- Logout Success Modal -->
+  <div id="logoutSuccessModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Successfully Logged Out</h2>
+      <p>You have been logged out successfully.</p>
+    </div>
+  </div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../aboutus/aboutus.js"></script>
+
+  <script>
+    function playMusic() {
+      var audio = document.getElementById('background-music');
+      audio.play();
+    }
+    function stopMusic() {
+      var audio = document.getElementById('background-music');
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  </script>
+  <script>
+    let currentIndex = 0;
+
+    function changeState(state) {
+        document.getElementById("title").innerText = state;
+
+        const statesData = {
+            "Penang": {
+                "images": ["../assets/img/cuisineImages/Penang/Oyster Omelette.jpg", "../assets/img/cuisineImages/Penang/Cendol.jpg", "../assets/img/cuisineImages/Penang/Penang Laksa.jpg"],
+                "descriptions": [
+                    "Oyster Omelette",
+                    "Cendol",
+                    "Penang Laksa"
+                ],
+                "descriptions02": [
+                    "The freshness of the oysters used in this meal sets it apart from others. To give the oysters a crisp yet soft feel, fried rice flour batter and eggs are combined with them.",
+                    "It is paired with red beans, fresh coconut milk, chewy green rice flour jelly (chendol), and gula Melaka (brown sugar) syrup.",
+                    "Authentic Penang dishes include this acidic hot soup with plump white noodles and sprinkling of tuna. It has a unique smell."
+                ]
+            },
+            "Perlis": {
+                "images": ["../assets/img/cuisineImages/Perlis/Nasi Ulam.jpg", "../assets/img/cuisineImages/Perlis/Pulut Mempelam.jpg", "../assets/img/cuisineImages/Perlis/Laksa Perlis.jpg"],
+                "descriptions": [
+                    "Nasi Ulam",
+                    "Pulut Mempelam",
+                    "Laksa Perlis"
+                ],
+                "descriptions02": [
+                    "Nasi ulam, a nutritious traditional dish for health-conscious eaters, consists of rice mixed with a variety of ulam (local salad) ingredients, including ginger, lemongrass, lengkuas, shallots, daggers, and certain leafy vegetables.",
+                    "Mango combined is called mempelam, while sticky rice is called pulut. Sticky glutinous rice accompanied with sweet coconut sauce and mango chunks.",
+                    "Laksa Perlis which include torch ginger, sardine, mackerel, and laksa leaf, the gravy has a higher concentration. "
+                ]
+            },
+            "Kedah": {
+                "images": ["../assets/img/cuisineImages/Kedah/Pekasam.jpg", "../assets/img/cuisineImages/Kedah/Laksa Kedah.jpeg", "../assets/img/cuisineImages/Kedah/Mee Rebus.jpeg"],
+                "descriptions": [
+                    "Pekasam",
+                    "Laksa Kedah",
+                    "Mee Rebus"
+                ],
+                "descriptions02": [
+                    "Pekasam is the name for food that has been fermented, especially fish. As a memento, you can purchase a pre-packaged pekasam to enjoy at home.",
+                    "Rice noodles with a tart asam flavor are paired with a fish-based sauce in this meal. Onions, cucumbers, and fragrant herbs like daun kesum are used as garnish.",
+                    "This dish consists of rich, spicy gravy made from potatoes and yellow noodles, topped with crunchy bean sprouts and a hard-boiled egg."
+                ]
+            },
+            "Perak": {
+                "images": ["../assets/img/cuisineImages/Perak/Chee Cheong Fun.jpg", "../assets/img/cuisineImages/Perak/Tauge Chicken Rice.jpg", "../assets/img/cuisineImages/Perak/Salted Chicken.jpg"],
+                "descriptions": [
+                    "Chee Cheong Fun",
+                    "Tauge Chicken Rice",
+                    "Salted Chicken"
+                ],
+                "descriptions02": [
+                    "Rice noodles with prawn or pork is typically served with a choice of sweet, spicy, or mushroom sauce!",
+                    "A dish of crispy bean sprouts with soy sauce is served alongside the juicy, succulent chicken. Select hor fun or rice to go with it!",
+                    "Chinese herbs are used to wrap the chicken before baking it in salt!"
+                ]
+            },
+            "Selangor": {
+                "images": ["../assets/img/cuisineImages/Selangor/Ayam Percik.jpeg", "../assets/img/cuisineImages/Selangor/Bak Kut Teh.jpeg", "../assets/img/cuisineImages/Selangor/Nasi Lemak.jpeg"],
+                "descriptions": [
+                    "Ayam Percik",
+                    "Bak Kut Teh",
+                    "Nasi Lemak"
+                ],
+                "descriptions02": [
+                    "Grilled or roasted chicken prepared in the Malaysian way. It is marinated in a variety of fragrant pastes and spices, including tamarind, turmeric, and lemongrass.",
+                    "Pork ribs are cooked slowly in a flavorful broth made with herbs and spices in Bak Kut Teh. It's frequently served with a dish of rice seasoned with shallots.",
+                    "Savoury rice cooked with coconut milk and pandan leaves."
+                ]
+            },
+            "Malacca": {
+                "images": ["../assets/img/cuisineImages/Malacca/Chicken Rice Ball.jpg", "../assets/img/cuisineImages/Malacca/Satay Celup.jpg", "../assets/img/cuisineImages/Malacca/Putu Piring.jpeg"],
+                "descriptions": [
+                    "Chicken Rice Ball",
+                    "Satay Celup",
+                    "Putu Piring"
+                ],
+                "descriptions02": [
+                    "With the exception of the rice's golf ball-sized form, chicken rice balls are comparable to traditional Hainanese chicken rice.",
+                    "Satay celup is a dish made with skewered meat and vegetable bits. The skewers are dipped into a communal pot of fiery, spicy peanut sauce that is set into a circular table.",
+                    "Putu Piring is made with rice flour, filled with gula Melaka (palm sugar) filling, and covered in grated coconut."
+                ]
+            },
+            "Johor": {
+                "images": ["../assets/img/cuisineImages/Johor/Nasi Briyani.jpg", "../assets/img/cuisineImages/Johor/Otak Otak.jpeg", "../assets/img/cuisineImages/Johor/Laksa Johor.jpeg"],
+                "descriptions": [
+                    "Nasi Briyani",
+                    "Otak-otak",
+                    "Laksa Johor"
+                ],
+                "descriptions02": [
+                    "Nasi Briyani is a rice meal that pairs well with beef curries, eggs, and vegetables. The vegetarian option comes with natto, eggs, and cooked or raw veggies.",
+                    "Wrapped in coconut or banana leaves, otak-otak is a mixture of ground fish meat, tapioca starch, and seasonings. This is a typical snack that complements other dishes served at lunch or dinner.",
+                    "A spicy noodle dish, uses spaghetti and has a richer gravy. The flavorful, gritty gravy created from fish has a wonderful blend of spices and veggies."
+                ]
+            },
+            "Kelantan": {
+                "images": ["../assets/img/cuisineImages/Kelantan/Nasi Kerabu.jpg", "../assets/img/cuisineImages/Kelantan/Laksam.jpg", "../assets/img/cuisineImages/Kelantan/Nasi Tumpang.jpg"],
+                "descriptions": [
+                    "Nasi Kerabu",
+                    "Laksam",
+                    "Nasi Tumpang"
+                ],
+                "descriptions02": [
+                    "Nasi kerabu is distinguished by its unique blue-hued rice, which is produced by adding butterfly pea flowers to the rice while it cooks.",
+                    "With its creamy gravy made from coconut milk and flavored with a variety of aromatic spices including lemongrass, galangal, turmeric, and dried shrimp, laksam offers a distinct taste experience from the sour and spicy Penang laksa.",
+                    "Wrapped in banana leaves, nasi tumpang is a visually striking and distinctive dish made of layers of rice, meat, and seasonings."
+                ]
+            },
+            "Pahang": {
+                "images": ["../assets/img/cuisineImages/Pahang/Gulai Tempoyak Ikan Patin.jpg", "../assets/img/cuisineImages/Pahang/Nasi Kebuli.jpg", "../assets/img/cuisineImages/Pahang/Ikan Bakar Petai.jpeg"],
+                "descriptions": [
+                    "Gulai Tempoyak Ikan Patin",
+                    "Nasi Kebuli",
+                    "Ikan Bakar Petai"
+                ],
+                "descriptions02": [
+                    "Gulai tempoyak ikan patin is a combination of soft, juicy patin fish with tempoyak (fermented durian) curry.",
+                    "Nasi kebuli is consisting of rice cooked in coconut oil with chicken (or lamb or mutton) occasionally added, as well as raisins, olives, clovers, and lemongrass for flavor.",
+                    "The usual ingredients for ikan bakar petai include pari (stingray), jenahak (golden snapper), and siakap (barramundi)."
+                ]
+            },
+            "Sabah": {
+                "images": ["../assets/img/cuisineImages/Sabah/Tuaran Mee.jpg", "../assets/img/cuisineImages/Sabah/Sinalau Bakas.jpg","../assets/img/cuisineImages/Sabah/Sliced Pork Noodles.jpg"],
+                "descriptions": [
+                    "Tuaran Mee",
+                    "Sinalau Bakas",
+                    "Sliced Pork Noodles"
+                ],
+                "descriptions02": [
+                    "After boiling, yellow noodles are fried with a topping of your choice. Beef chunks marinated in Lihing, a sweet rice wine from the area, and fried with vegetables and an egg.",
+                    "Sinalau Bakas, which translates to \"smoked wild boar,\" is highly recommended as the ultimate \"pusas\" (beer time snack). Usually seen by the side of the road as one winds through Kinabalu Park in Kundasang.",
+                    "This dish consists of thinly sliced blanched pork topped with fat, deep-fried shallots, and scallions in a bowl of noodles."
+                ]
+            },
+            "Sarawak": {
+                "images": ["../assets/img/cuisineImages/Sarawak/Kolo Mee.jpg", "../assets/img/cuisineImages/Sarawak/Manok Kacangma.jpg", "../assets/img/cuisineImages/Sarawak/Ayam Pansuh.jpg"],
+                "descriptions": [
+                    "Kolo Mee",
+                    "Manok Kacangma",
+                    "Ayam Pansuh"
+                ],
+                "descriptions02": [
+                    "It is made up of yellow egg noodles that are tossed in a light sauce and then served with chicken cutlets, minced beef, or pieces of barbecued pork (char siew).",
+                    "Made of chicken cooked in a broth made with kacangma. The herb, often called motherwort, is said to help women cope with the symptoms of menstruation.",
+                    "Before being grilled over an open flame, chopped chicken pieces, lemongrass, and tapioca leaves are stuffed into bamboo. The chicken turns out to be moist and tender, with a sauce that tastes of lemongrass and bamboo."
+                ]
+            },
+            "Terengganu": {
+                "images": ["../assets/img/cuisineImages/Terengganu/Nasi Dagang.jpg", "../assets/img/cuisineImages/Terengganu/Nekbat.jpg", "../assets/img/cuisineImages/Terengganu/Keropok lekor.jpg"],
+                "descriptions": [
+                    "Nasi Dagang",
+                    "Nekbat",
+                    "Keropok Lekor"
+                ],
+                "descriptions02": [
+                    "Nasi Dagang is produced with a combination of white glutinous rice and pickled cucumber, carrots, and fragrant tuna curry, which is steamed in coconut milk.",
+                    "Rice flour and eggs are used to make the sweet treat known as nekbat. The plain nekbat is given a sweet taste by boiling it in sweetened water for a short while after it has finished cooking.",
+                    "This dish is shaped like a sausage and is prepared with ground fish. Keropok lekor is frequently served with a sweet chili sauce and can be boiled or deep-fried."
+                ]
+            },
+            "Labuan": {
+                "images": ["../assets/img/cuisineImages/Labuan/Tapai.png", "../assets/img/cuisineImages/Labuan/Jelurut.jpeg", "../assets/img/cuisineImages/Labuan/Soto Daging.jpg"],
+                "descriptions": [
+                    "Tapai",
+                    "Jelurut",
+                    "Soto Daging"
+                ],
+                "descriptions02": [
+                    "Tapai is made from fermented ragi, water, and glutinous rice. Because ragi is one of the ingredients, it tastes a little alcoholic.",
+                    "It is a delicacy wrapped in lined nipah leaves that is made of rice flour, sugar, and coconut milk. Jelurut comes in green tint and many flavors including yam and durian.",
+                    "A bowl of beef noodle soup called soto daging is served with fresh veggies, tender beef slices, and seasonings from the area."
+                ]
+            },
+            "Putrajaya": {
+                "images": ["../assets/img/cuisineImages/Putrajaya/Otak-Otak.jpg", "../assets/img/cuisineImages/Putrajaya/Nasi Kandar.jpg", "../assets/img/cuisineImages/Putrajaya/Nasi Kerabu.JPG"],
+                "descriptions": [
+                    "Otak-Otak",
+                    "Nasi Kandar",
+                    "Nasi Kerabu"
+                ],
+                "descriptions02": [
+                    "The base for otak-otak is grilled fish paste mixed with a number of spices, including turmeric, lemongrass, and chilies.",
+                    "A blend of steamed rice and several Indian-style curries, typically served with an eggplant or okra curry and a chicken or beef curry.",
+                    "Blue-colored rice is consumed with salads, pickles, crackers, dried fish, or fried chicken."
+                ]
+            },
+            "Negeri Sembilan": {
+                "images": ["../assets/img/cuisineImages/Negeri Sembilan/Siew Pau.jpg", "../assets/img/cuisineImages/Negeri Sembilan/Curry Chicken Bun.jpg", "../assets/img/cuisineImages/Negeri Sembilan/Pasembur.jpg"],
+                "descriptions": [
+                    "Siew Pau",
+                    "Curry Chicken Bun",
+                    "Pasembur"
+                ],
+                "descriptions02": [
+                    "Butter pastry bun that is crispy and flaky and is filled with savory sweet roasted pork (char siew). It is baked in the oven and pleated similarly to a steamed pau (steamed bun).",
+                    "Spicy buns with a flavorful sauce to dip the bread in. Because the curry is made of potatoes wrapped in a huge bun, every bite should be enjoyed.",
+                    "Indian rojak is made with shredded fresh cucumber, turnip, potatoes, prawn fritters, fried bean curd, and a hardboiled egg. Sesame seeds are added on the top to improve the flavor."
+                ]
+            },
+            "Kuala Lumpur": {
+                "images": ["../assets/img/cuisineImages/Kuala Lumpur/Nasi Lemak.JPG", "../assets/img/cuisineImages/Kuala Lumpur/Satay.jpg", "../assets/img/cuisineImages/Kuala Lumpur/Rojak.jpg"],
+                "descriptions": [
+                    "Nasi Lemak",
+                    "Satay",
+                    "Rojak"
+                ],
+                "descriptions02": [
+                    "Rice cooked in coconut milk and served with hard-boiled eggs, peanuts, fried anchovies, and a spicy shrimp paste; richer and more sophisticated versions may even have fried chicken or chicken rendang on the side.",
+                    "To achieve the beloved and treasured smoky flavor, most satay meat is heavily seasoned with turmeric powder and cooked over charcoal.",
+                    "Regional salad made of pineapple, cucumber, green mango, and jicama. It is served with dough fritters dipped in a sticky black sauce."
+                ]
+            }
+        };
+
+        const selectedState = statesData[state];
+
+        document.getElementById("image1").src = selectedState.images[0];
+        document.getElementById("desc1").innerHTML = `<strong>${selectedState.descriptions[0]}</strong>`;
+        document.getElementById("desc01").innerText = selectedState.descriptions02[0];
+        
+        document.getElementById("image2").src = selectedState.images[1];
+        document.getElementById("desc2").innerHTML = `<strong>${selectedState.descriptions[1]}</strong>`;
+        document.getElementById("desc02").innerText = selectedState.descriptions02[1];
+        
+        document.getElementById("image3").src = selectedState.images[2];
+        document.getElementById("desc3").innerHTML = `<strong>${selectedState.descriptions[2]}</strong>`;
+        document.getElementById("desc03").innerText = selectedState.descriptions02[2];
+
+        rotateImages();
+    }
+
+    function rotateImages() {
+        const images = document.querySelectorAll('.image-wrapper img');
+        const descriptions = document.querySelectorAll('.image-wrapper p');
+
+        currentIndex = (currentIndex + 1) % images.length;
+
+        images.forEach((img, index) => {
+            img.classList.remove('large', 'small');
+            img.parentElement.classList.remove('large', 'small');
+            if (index === currentIndex) {
+                img.parentElement.classList.add('large');
+                img.classList.add('large');
+            } else {
+                img.parentElement.classList.add('small');
+                img.classList.add('small');
+            }
+        });
+    }
+
+    setInterval(rotateImages, 3000);
+  </script>
+</body>
+</html>

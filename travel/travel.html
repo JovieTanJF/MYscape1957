@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Travel</title>
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicons -->
+    <link href="../assets/img/logo/icon.jpg" rel="icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Cardo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="../index/index.css" rel="stylesheet">
+    <link href="../feedback/feedback.css" rel="stylesheet">
+    <link href="../index/loginCookies.css" rel="stylesheet">
+
+    <style>
+        .state {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            margin: 10px 0;
+        }
+
+        .adventure {
+            /* background-image: url('../assets/img/adventure/background2.gif'); */
+            background-size: cover;
+            background-repeat: no-repeat; 
+            background-position: center;
+            padding: 60px 0;
+            color: var(--default-color); 
+            height: auto; 
+        }
+
+        .state:focus, .state:active {
+            outline: none;
+            background-color: transparent; /* Ensure no background change */
+        }
+
+        .adventure-places {
+            display: none;
+            margin-top: 10px;
+            border: 1px solid #ccc; 
+            padding: 10px; 
+        }
+
+        #state-buttons {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: space-between;
+        }
+
+        #state-buttons div {
+            width: 23%;
+            margin-bottom: 10px;
+            padding: 10px; 
+            cursor: pointer; 
+            color: rgb(93, 14, 89);
+            text-align: center; 
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background-image: url('../assets/img/adventure/Banner/01.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+          <a href="../index/index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+            <img src="../assets/img/logo/myscape.png" class="logo" alt="Logo">
+          </a>
+    
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="../index/index.html">Home<br></a></li>
+              <li class="dropdown"><a href="../index/index.html#choice"><span>Others </span> <i class="bi bi-chevron-down toggle-dropdown"></a></i>
+                <ul>
+                  <li><a href="../destination/destination.html">Destination</a></li>
+                  <li><a href="../cuisine/cuisine.html">Cuisine</a></li>
+                  <li><a href="travel.html" class="active">Adventure Travel</a></li>
+                  <li><a href="../festival/festival.html">Festival</a></li>
+                </ul>
+              </li>
+              <li><a href="../aboutus/aboutus.html">About Us</a></li>
+              <li><a href="../feedback/feedback.html">Feedback</a></li>
+              <li><a href="#" id="loginBtn">Login</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+    
+          <div class="header-social-links">
+            <a href="http://facebook.com" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="http://instagram.com" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="http://youtube.com" class="youtube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="button-container">
+            <p>Music: 
+                <img src="../assets/img/mainpageImages/Music/play.png" onclick="playMusic()">
+                <img src="../assets/img/mainpageImages/Music/stop.png" onclick="stopMusic()">
+            </p>
+        </div>
+        <audio id="background-music" src="../assets/img/mainpageImages/Music/Saya Anak Malaysia.mp3" autoplay loop>
+            Your browser does not support the audio element.
+        </audio>
+
+        <div class="banner">
+            <div class="banner-content">
+                <span class="underlighth1"><h1>&ensp;Adventure Travel&ensp;</h1></span>
+            </div>
+        </div>
+
+        <div id="adventure" class="adventure section">
+            <div class="my-custom-container" data-aos="fade-up">
+                <p class="text-center" style="font-style: italic; color: grey;">
+                    Welcome to the Adventure Panel, your ultimate guide to exploring the most captivating destinations across each state!<br>
+                    This interactive panel showcases a curated selection of must-visit places, highlighting their unique features and activities that make them perfect for adventure seekers.<br><br><br><br>
+                </p>                
+                <!-- Description and State Buttons Area -->
+                <div class="description-and-buttons">
+                    <br>
+                    <h3><br>Select a State:<br><br><br></h3>
+                    <div id="state-buttons">
+                        <div class="state-btn" onclick="showPlaces('johor')">Johor</div>
+                        <div class="state-btn" onclick="showPlaces('kedah')">Kedah</div>
+                        <div class="state-btn" onclick="showPlaces('kelantan')">Kelantan</div>
+                        <div class="state-btn" onclick="showPlaces('kuala_lumpur')">Kuala Lumpur</div>
+                        <div class="state-btn" onclick="showPlaces('labuan')">Labuan</div>
+                        <div class="state-btn" onclick="showPlaces('malacca')">Malacca</div>
+                        <div class="state-btn" onclick="showPlaces('negeri_sembilan')">Negeri Sembilan</div>
+                        <div class="state-btn" onclick="showPlaces('pahang')">Pahang</div>
+                        <div class="state-btn" onclick="showPlaces('penang')">Penang</div>
+                        <div class="state-btn" onclick="showPlaces('perak')">Perak</div>
+                        <div class="state-btn" onclick="showPlaces('perlis')">Perlis</div>
+                        <div class="state-btn" onclick="showPlaces('putrajaya')">Putrajaya</div>
+                        <div class="state-btn" onclick="showPlaces('sabah')">Sabah</div>
+                        <div class="state-btn" onclick="showPlaces('sarawak')">Sarawak</div>
+                        <div class="state-btn" onclick="showPlaces('selangor')">Selangor</div>
+                        <div class="state-btn" onclick="showPlaces('terengganu')">Terengganu</div>
+                    </div>
+                    <br><br><br>
+                </div>
+                <div id="places" class="adventure-places"></div> 
+            </div>
+        </div>
+        
+        <div>
+            <script>
+                const adventurePlaces = {
+                    johor: [
+                        {
+                            name: "<strong>Legoland Malaysia</strong><br><br>",
+                            image: "../assets/img/adventure/johor1.jpeg",
+                            description: "A theme park dedicated to Lego, featuring rides and attractions for all ages.<br>"
+                        },
+                        {
+                            name: "<strong>Desaru Beach</strong><br><br>",
+                            image: "../assets/img/adventure/johor2.jpeg",
+                            description: "A beautiful beach known for its clean sands and clear waters, perfect for relaxation.<br>"
+                        },
+                        {
+                            name: "<strong>Skyscape Johor Bahru</strong><br><br>",
+                            image: "../assets/img/adventure/johor3.jpeg",
+                            description: "An observation deck offering panoramic views of the city and beyond.<br>"
+                        }
+                    ],
+
+                    kedah: [
+                        {
+                            name: "<strong>Langkawi Skycab</strong><br><br>",
+                            image: "../assets/img/adventure/kedah1.jpeg",
+                            description: "A cable car ride with stunning views of Langkawi.<br>"
+                        },
+                        {
+                            name: "<strong>Kilim Geopark</strong><br><br>",
+                            image: "../assets/img/adventure/kedah2.jpeg", 
+                            description: "A protected area with beautiful mangroves and diverse wildlife.<br>"
+                        },
+                        {
+                            name: "<strong>Pulau Payar Marine Park</strong><br><br>",
+                            image: "../assets/img/adventure/kedah3.jpeg", 
+                            description: "A marine park famous for snorkeling and diving experiences.<br>"
+                        }
+                    ],
+
+                    kelantan: [
+                        {
+                            name: "<strong>Gua Ikan</strong><br><br>",
+                            image: "../assets/img/adventure/kelantan1.jpeg", 
+                            description: "A stunning cave with unique rock formations.<br>"
+                        },
+                        {
+                            name: "<strong>Floating Market Pulau Suri</strong><br><br>",
+                            image: "../assets/img/adventure/kelantan2.jpeg", 
+                            description: "A vibrant floating market offering local delicacies and handicrafts.<br>"
+                        },
+                        {
+                            name: "<strong>Cottage Industries and Crafts</strong><br><br>",
+                            image: "../assets/img/adventure/kelantan3.jpeg", 
+                            description: "Experience the local craftsmanship and traditional products.<br>"
+                        }
+                    ],
+
+                    kuala_lumpur: [
+                        {
+                            name: "<strong>Petronas Twin Towers</strong><br><br>",
+                            image: "../assets/img/adventure/kl1.jpeg", 
+                            description: "The iconic skyscrapers that are a symbol of Malaysia.<br>"
+                        },
+                        {
+                            name: "<strong>KL Tower</strong><br><br>",
+                            image: "../assets/img/adventure/kl2.jpeg", 
+                            description: "A telecommunications tower offering panoramic views of the city.<br>"
+                        },
+                        {
+                            name: "<strong>Zoo Negara</strong><br><br>",
+                            image: "../assets/img/adventure/kl3.jpeg", 
+                            description: "A zoo that is home to a wide variety of animals.<br>"
+                        }
+                    ],
+
+                    labuan: [
+                        {
+                            name: "<strong>Pulau Papan (Papan Island)</strong><br><br>",
+                            image: "../assets/img/adventure/labuan1.jpeg", 
+                            description: "A picturesque island known for its pristine beaches, crystal-clear waters, and popular for snorkeling and relaxation.<br>"
+                        },
+                        {
+                            name: "<strong>Labuan Marine Museum</strong><br><br>",
+                            image: "../assets/img/adventure/labuan2.jpeg", 
+                            description: "A museum showcasing the rich marine biodiversity of Labuan, featuring exhibits on marine life, shipwrecks, and maritime history.<br>"
+                        },
+                        {
+                            name: "<strong>Labuan Bird Park</strong><br><br>",
+                            image: "../assets/img/adventure/labuan3.jpeg", 
+                            description: "A sanctuary for various bird species, offering a peaceful environment for birdwatching and learning about local and exotic birds.<br>"
+                        }
+                    ],
+                    
+                    malacca: [
+                        {
+                            name: "<strong>A'Famosa Fort</strong><br><br>",
+                            image: "../assets/img/adventure/malacca1.jpeg", 
+                            description: "A historic fort that dates back to the Portuguese colonial era.<br>"
+                        },
+                        {
+                            name: "<strong>Jonker Street</strong><br><br>",
+                            image: "../assets/img/adventure/malacca2.jpeg<br><br>", 
+                            description: "A famous street known for its night market and local delicacies.<br>"
+                        },
+                        {
+                            name: "<strong>The Stadthuys</strong><br><br>",
+                            image: "../assets/img/adventure/malacca3.jpeg", 
+                            description: "A historic building and museum that showcases Malacca's history.<br>"
+                        }
+                    ],
+
+                    negeri_sembilan: [
+                        {
+                            name: "<strong>Port Dickson</strong><br><br>",
+                            image: "../assets/img/adventure/ns1.jpeg", 
+                            description: "A popular beach destination known for its beautiful coastline.<br>"
+                        },
+                        {
+                            name: "<strong>Army Museum</strong><br><br>",
+                            image: "../assets/img/adventure/ns2.jpeg", 
+                            description: "A museum dedicated to the Malaysian Armed Forces.<br>"
+                        },
+                        {
+                            name: "<strong>Alive 3D Art Gallery</strong><br><br>",
+                            image: "../assets/img/adventure/ns3.jpeg",
+                            description: "An interactive art gallery with 3D paintings and illusions.<br>"
+                        }
+                    ],
+
+                    pahang: [
+                        {
+                            name: "<strong>Cameron Highlands</strong><br><br>",
+                            image: "../assets/img/adventure/pahang1.jpeg", 
+                            description: "A cool escape known for its tea plantations and strawberry farms.<br>"
+                        },
+                        {       
+                            name: "<strong>Genting Highlands</strong><br><br>",
+                            image: "../assets/img/adventure/pahang2.jpeg", 
+                            description: "A hill resort famous for its theme parks and casinos.<br>"
+                        },
+                        {
+                            name: "<strong>Endau-Rompin National Park</strong><br><br>",
+                            image: "../assets/img/adventure/pahang3.jpeg", 
+                            description: "A national park known for its rich biodiversity and trekking opportunities.<br>"
+                        }
+                    ],
+
+                    penang: [
+                        {
+                            name: "<strong>Penang Hill</strong><br><br>",
+                            image: "../assets/img/adventure/penang1.jpeg", 
+                            description: "A hill resort with breathtaking views and cooler climate.<br>"
+                        },
+                        {
+                            name: "<strong>Escape</strong><br><br>",
+                            image: "../assets/img/adventure/penang2.jpeg", 
+                            description: "An adventure park with various outdoor activities and attractions.<br>"
+                        },
+                        {
+                            name: "<strong>Batu Feringghi</strong><br><br>",
+                            image: "../assets/img/adventure/penang3.jpeg", 
+                            description: "A famous beach known for its vibrant night market.<br>"
+                        }
+                    ],
+
+                    perak: [
+                        {
+                            name: "<strong>Pulau Pangkor</strong><br><br>",
+                            image: "../assets/img/adventure/perak1.jpeg", 
+                            description: "An island known for its beautiful beaches and resorts.<br>"
+                        },
+                        {
+                            name: "<strong>Gua Tempurung</strong><br><br>",
+                            image: "../assets/img/adventure/perak2.jpeg", 
+                            description: "A limestone cave with stunning formations and adventure tours.<br>"
+                        },
+                        {
+                            name: "<strong>Kellie's Castle</strong><br><br>",
+                            image: "../assets/img/adventure/perak3.jpeg", 
+                            description: "A historic mansion with intriguing architecture and stories.<br>"
+                        }
+                    ],
+
+                    perlis: [
+                        {
+                            name: "<strong>Gua Kelam Recreational Farm</strong><br><br>",
+                            image: "../assets/img/adventure/perlis1.jpeg", 
+                            description: "A recreational area featuring a beautiful cave.<br>"
+                        },
+                        {
+                            name: "<strong>Snake and Reptile Farm</strong><br><br>",
+                            image: "../assets/img/adventure/perlis2.jpeg",
+                            description: "A farm with various species of snakes and reptiles.<br>"
+                        },
+                        {
+                            name: "<strong>Padang Besar</strong><br><br>",
+                            image: "../assets/img/adventure/perlis3.jpeg", 
+                            description: "A border town known for shopping and local products.<br>>"
+                        }
+                    ],
+
+                    putrajaya: [
+                        {
+                            name: "<strong>Putra Mosque (Masjid Putra)</strong><br><br>",
+                            image: "../assets/img/adventure/putrajaya1.jpeg", 
+                            description: "An iconic pink-domed mosque situated by the Putrajaya Lake, known for its stunning architecture and serene surroundings.<br>"
+                        },
+                        {
+                            name: "<strong>Dataran Putra (Putra Square)</strong><br><br>",
+                            image: "../assets/img/adventure/putrajaya2.jpeg",
+                            description: "A grand plaza that hosts important events and offers picturesque views of the surrounding government buildings and Putra Mosque.<br>"
+                        },
+                        {
+                            name: "<strong>Signature Bridges</strong><br><br>",
+                            image: "../assets/img/adventure/putrajaya3.jpeg", 
+                            description: "A collection of architecturally unique bridges that connect the city's islands and offer spectacular views, especially at night.<br>"
+                        }
+                    ],
+
+                    sabah: [
+                        {
+                            name: "<strong>Mount Kinabalu</strong><br><br>",
+                            image: "../assets/img/adventure/sabah1.jpeg",
+                            description: "The highest peak in Southeast Asia, popular for trekking.<br>"
+                        },
+                        {
+                            name: "<strong>Sipadan Island</strong><br><br>",
+                            image: "../assets/img/adventure/sabah2.jpeg", 
+                            description: "A world-renowned diving destination with vibrant marine life.<br>"
+                        },
+                        {
+                            name: "<strong>Sepilok Orangutan Rehabilitation Centre</strong><br><br>",
+                            image: "../assets/img/adventure/sabah3.jpeg", 
+                            description: "A sanctuary dedicated to rehabilitating orphaned orangutans.<br>"
+                        }
+                    ],
+                    sarawak: [
+                        {
+                            name: "<strong>Bako National Park</strong><br><br>",
+                            image: "../assets/img/adventure/sarawak1.jpeg", 
+                            description: "A national park known for its diverse wildlife and hiking trails.<br>"
+                        },
+                        {
+                            name: "<strong>Mulu Caves</strong><br><br>",
+                            image: "../assets/img/adventure/sarawak2.jpeg",
+                            description: "A UNESCO World Heritage Site with impressive cave systems.<br>"
+                        },
+                        {
+                            name: "<strong>Kuching Cat Museum</strong><br><br>",
+                            image: "../assets/img/adventure/sarawak3.jpeg",
+                            description: "A museum dedicated to all things related to cats.<br>"
+                        }
+                    ],
+                    selangor: [
+                        {
+                            name: "<strong>Sunway Lagoon</strong><br><br>",
+                            image: "../assets/img/adventure/selangor1.jpeg", 
+                            description: "A water park and amusement park with various attractions.<br>"
+                        },
+                        {
+                            name: "<strong>Batu Caves</strong><br><br>",
+                            image: "../assets/img/adventure/selangor2.jpeg", 
+                            description: "A limestone hill with a series of caves and temples.<br>"
+                        },
+                        {
+                            name: "<strong>Sky Mirror</strong><br><br>",
+                            image: "../assets/img/adventure/selangor3.jpeg", 
+                            description: "A unique natural phenomenon where the sea reflects the sky.<br>"
+                        }
+                    ],
+
+                    terengganu: [
+                        {
+                            name: "<strong>Redang Island</strong><br><br>",
+                            image: "../assets/img/adventure/terengganu1.jpeg", 
+                            description: "A beautiful island known for its crystal-clear waters.<br><br>"
+                        },
+                        {
+                            name: "<strong>Perhentian Islands</strong><br><br>",
+                            image: "../assets/img/adventure/terengganu2.jpeg", 
+                            description: "A group of islands famous for snorkeling and diving.<br><br>"
+                        },
+                        {
+                            name: "<strong>Taman Negara</strong><br><br>",
+                            image: "../assets/img/adventure/terengganu3.jpeg", 
+                            description: "One of the oldest rainforests in the world, offering eco-tourism experiences.<br><br>"
+                        }
+                    ],
+                };
+
+                function showPlaces(state) {
+                    const placesDiv = document.getElementById('places');
+                    const normalizedState = state.toLowerCase().replace(/ /g, '_');
+
+                    if (adventurePlaces[normalizedState]) {
+                        const formattedState = normalizedState.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+                        placesDiv.innerHTML = '<h4>Adventure Places in ' + formattedState + ':</h4>';
+                        adventurePlaces[normalizedState].forEach(place => {
+                            placesDiv.innerHTML +=
+                                '<div class="place">' +
+                                    '<h5>' + place.name + '</h5>' +
+                                    '<img src="' + place.image + '" alt="' + place.name + '" class="place-image">' +
+                                    '<p>' + place.description + '</p>' +
+                                '</div>';
+                        });
+
+                        placesDiv.style.display = 'block';
+                    } else {
+                        placesDiv.innerHTML = '<p>No places found for the selected state.</p>';
+                        placesDiv.style.display = 'block';
+                    }
+                }
+
+            </script>
+        </div>
+
+        <div id="choice" class="choice section">
+            <div class="container-fluid choice py-5">
+              <div class="container py-5">
+                <div class="tab-class text-center">
+                  <div class="row g-4">
+                    <div class="col-lg-12 text-center">
+                      <h1>Our Related Webpages</h1>
+                    </div>
+                  </div>
+                  <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                      <div class="row g-4">
+                        <div class="col-lg-12">
+                          <div class="row g-4">
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                              <div class="rounded position-relative choice-item">
+                                <div class="choice-img">
+                                  <img src="../assets/img/mainpageImages/Others Cover/destination.png" class="img-fluid w-100 rounded-top" alt="">
+                                </div>
+                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                  <h4><strong>Destination</strong></h4>
+                                  <p>Malaysia boasts dazzling cities, hidden beaches, ancient cultures, and breathtaking rainforests, all in one.
+                                  </p>
+                                  <div class="d-flex justify-content-between flex-lg-wrap">
+                                    <a href="../destination/destination.html" class="btn border border-secondary rounded-pill px-3 text-primary">Click Here</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                              <div class="rounded position-relative choice-item">
+                                <div class="choice-img">
+                                  <img src="../assets/img/mainpageImages/Others Cover/cuisine.png" class="img-fluid w-100 rounded-top" alt="">
+                                </div>
+                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                  <h4><strong>Cuisine</strong></h4>
+                                  <p>Malaysia's cuisine is a flavorful fusion of Malay, Chinese, and Indian culinary traditions.</p>
+                                  <div class="d-flex justify-content-between flex-lg-wrap">
+                                    <a href="../cuisine/cuisine.html" class="btn border border-secondary rounded-pill px-3 text-primary">Click Here</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                              <div class="rounded position-relative choice-item">
+                                <div class="choice-img">
+                                  <img src="../assets/img/mainpageImages/Others Cover/travel.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                </div>
+                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                  <h4><strong>Travel</strong></h4>
+                                  <p>Journey through Malaysia, where vibrant streets, serene beaches, diverse cultures, and unforgettable experiences await.</p>
+                                  <div class="d-flex justify-content-between flex-lg-wrap">
+                                    <a href="../travel/travel.html" class="btn border border-secondary rounded-pill px-3 text-primary">Click Here</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div><div class="col-md-6 col-lg-4 col-xl-3">
+                              <div class="rounded position-relative choice-item">
+                                <div class="choice-img">
+                                  <img src="../assets/img/mainpageImages/Others Cover/festival.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                </div>
+                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                  <h4><strong>Festival</strong></h4>
+                                  <p>Malaysia's festivals celebrate unity, blending diverse traditions with vibrant colors and joyful celebrations.</p>
+                                  <div class="d-flex justify-content-between flex-lg-wrap">
+                                    <a href="../festival/festival.html" class="btn border border-secondary rounded-pill px-3 text-primary">Click Here</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>    
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer" class="footer sticky-bottom">
+        <div class="container">
+          <div class="about">
+            <h2>About Us</h2>
+            <p><strong>Email</strong>&emsp;MYscape@gmail.com</p>
+            <p><strong>Address</strong>&emsp;Jalan Universiti, 31900 Kampar, Perak</p>
+            <p><strong>Phone Number</strong>&emsp;05-468 8888</p>
+          </div>
+          <div class="social-links d-flex justify-content-left">
+            <a href="http://facebook.com"><i class="bi bi-facebook"></i></a>
+            <a href="http://instagram.com"><i class="bi bi-instagram"></i></a>
+            <a href="http://youtube.com"><i class="bi bi-youtube"></i></a>
+          </div>
+          <div class="copyright text-center ">
+            <p>© <span>Copyright</span><img src="../assets/img/logo/myscape.png" class="logo" alt="Logo"><span>All Rights Reserved</span></p>
+          </div>
+        </div>
+    
+    </footer>
+
+    <!-- Login Form -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <form>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <div class="input-icon">
+            <input type="email" id="email" class="form-control" placeholder="Enter Email">
+            <i class="bi bi-envelope" style="color: black;"></i>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <div class="input-icon">
+            <input type="password" id="password" class="form-control" placeholder="Enter Password">
+            <i id="togglePassword" class="bi bi-eye-slash" style="cursor: pointer; color:black"></i>
+          </div>
+        </div>
+        <div class="form-options">
+          <div>
+            <input type="checkbox" id="remember">
+            <label for="remember">Remember me</label>
+          </div>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+    </div>
+  </div>
+
+  <!-- Registration Form -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Registration</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <div class="input-icon">
+            <input type="text" id="username" class="form-control" placeholder="Enter Username">
+            <i class="bi bi-person" style="color: black;"></i>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <div class="input-icon">
+            <input type="email" id="regEmail" class="form-control" placeholder="Enter Email">
+            <i class="bi bi-envelope" style="color: black;"></i>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <div class="input-icon">
+            <input type="password" id="regPassword" class="form-control" placeholder="Enter Password">
+            <i id="toggleRegPassword" class="bi bi-eye-slash" style="cursor: pointer;color: black;"></i>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password:</label>
+          <div class="input-icon">
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password">
+            <i id="toggleConfirmPassword" class="bi bi-eye-slash" style="cursor: pointer;color: black;"></i>
+          </div>
+        </div>
+        <div class="form-options">
+          <div>
+            <input type="checkbox" id="terms">
+            <label for="terms">I agree to the terms & conditions</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Register</button>
+      </form>
+      <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+    </div>
+  </div>
+
+  <!-- Login Success Modal -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login Successfully</h2>
+      <p>Welcome to MYSCAPE!</p>
+    </div>
+  </div>
+
+  <!-- Logout Success Modal -->
+  <div id="logoutSuccessModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Successfully Logged Out</h2>
+      <p>You have been logged out successfully.</p>
+    </div>
+  </div>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="line"></div>
+    </div>
+
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../aboutus/aboutus.js"></script>
+
+    <script>
+        function playMusic() {
+            var audio = document.getElementById('background-music');
+            audio.play();
+        }
+        function stopMusic() {
+            var audio = document.getElementById('background-music');
+            audio.pause();
+            audio.currentTime = 0;
+        }
+      </script>
+</body>
+</html>

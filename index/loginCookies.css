@@ -1,0 +1,322 @@
+/* ===== Modal Styles ===== */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  .modal-content {
+    background-color:#282828;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 400px;
+    color: whitesmoke;
+    position: relative;
+    box-shadow: 0px 5px 15px rgba(10, 10, 10, 0.703);
+  }
+  
+  #logoutSuccessModal .modal-content {
+    background-color:whitesmoke;
+  }
+  
+  #successModal .modal-content {
+    background-color: #f8f5f2;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal-content h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-top: 10px; 
+    font-size: 30px;
+    color:#1a1a1a;
+  }
+  
+  #registerModal .modal-content h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-top: 10px; 
+    font-size: 30px;
+    color:white;
+  }
+  
+  #loginModal .modal-content h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-top: 10px; 
+    font-size: 30px;
+    color:white;
+  }
+  
+  #logoutSuccessModal .modal-content h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-top: 10px; 
+    font-size: 25px;
+    color:#1a1a1a;
+  }
+  
+  .modal-content .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .modal-content .form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: whitesmoke;
+  }
+  
+  .modal-content .form-group .input-icon {
+    position: relative;
+  }
+  
+  .modal-content .form-group .input-icon input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .modal-content .form-group .input-icon i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: whitesmoke;
+  }
+  
+  .modal-content .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-content .form-options a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+  
+  .modal-content .form-options a:hover {
+    text-decoration: underline;
+  }
+  
+  .modal-content button {
+    width: 100%;
+    padding: 12px;
+    background-color:#cecece;
+    border: none;
+    border-radius: 5px;
+    color: #353535;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .modal-content button:hover {
+    background-color: #4e4e4e;
+  }
+  
+  .modal-content p {
+    text-align: center;
+    color:#1a1a1a;
+  }
+  
+  #registerModal .modal-content p {
+    text-align: center;
+    color:white;
+  }
+  
+  #loginModal .modal-content p {
+    text-align: center;
+    color:white;
+  }
+  
+  #logoutSuccessModal  .modal-content p {
+    text-align: center;
+    color:#1a1a1a;
+    font-size:14px;
+  }
+  
+  .modal-content p a {
+    color: whitesmoke;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .modal-content p a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ===== Close Button ===== */
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* ===== Form Style ===== */
+  .modal-content form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .modal-content form .form-group label {
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .modal-content form .form-group input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* ===== Hide the modals by default ===== */
+  #loginModal, #registerModal {
+    display: none;
+  }
+  
+  #successModal h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  #successModal p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+  
+  #successModal .close {
+    color: #3e3e3e;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  #successModal .close:hover {
+    color: #000;
+  }
+  
+  /* ===== Hide the success modals by default ===== */
+  #successModal {
+    display: none;
+  }
+  
+  /* ===== Cookie Consent Banner ===== */
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none; 
+  }
+  
+  .cookie-banner p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    display: inline;
+  }
+  
+  .cookie-banner a {
+    color: #18bc9c;
+    text-decoration: underline;
+  }
+  
+  .cookie-banner button {
+    background-color: #18bc9c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cookie-banner button:hover {
+    background-color: #149174;
+  }
+  
+  /* ===== Cookie Management Banner ===== */
+  #cookieManagementModal {
+    display: none; 
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  #cookieManagementModal .modal-content {
+    background-color: #2c3e50;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #282828;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    font: 20px;
+  }
+  
+  #cookieManagementModal h2 {
+    margin-top: 0;
+    font-size: 25px;
+    margin-bottom: 30px;
+    color:white;
+  }
+  
+  #cookieManagementModal label {
+    display: block;
+    margin-left:22px;
+    color:white;
+  }
+  
+  #cookieManagementModal .btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color:white;
+    background-color: #18bc9c;
+  }
